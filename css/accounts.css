@@ -1,0 +1,242 @@
+/*******************************/
+/* SPA SCREEN CONTROL          */
+/*******************************/
+
+#mainScreen, #loginScreen, #createAccountScreen, #editAccountScreen {
+    display: none;
+}
+
+#alertLogin {
+    display: none;
+}
+
+
+/*******************************/
+/* GENERAL                     */
+/*******************************/
+
+:root {
+    --contentWith: 25%;
+    --fontExtraSmall: 0.7rem;
+    --fontSmall: 0.85rem;
+    --fontMedium:0.95rem;
+    --fontExtraLarge: 1.75rem;
+    --orange: rgb(183, 55, 22);
+    --darkOrange: rgb(153, 36, 29);
+    --white: rgb(255, 255, 255);
+    --lightestGray: rgb(240, 240, 240);
+    --lightGray: rgb(100, 100, 100);
+    --darkGray: rgb(70, 70, 70);
+    --darkestGray: rgb(20, 20, 20);
+  }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--white);
+    margin: 0;
+}
+
+a {
+    cursor: pointer;
+}
+
+
+/*******************************/
+/* COMMON                      */
+/*******************************/
+
+.contentSection {
+    width: var(--contentWith);
+    margin: 3rem auto 0 auto;
+    text-align: center;
+}
+
+.orangeTitle {
+    font-size: var(--fontExtraLarge);
+    color: var(--orange);
+    font-weight: bold;
+}
+
+.alert {
+    font-weight: bold;
+    font-size: var(--fontMedium);
+    color: var(--orange);
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    border-radius: 0.25rem;
+    border: 0.1rem solid var(--orange);
+}
+
+.darkTitle {
+    font-size: var(--fontExtraLarge);
+    color: var(--darkestGray);
+    font-weight: bold;
+    text-align: left;
+}
+
+.formContent {
+    background: var(--white);
+    font-size: var(--fontMedium);
+    color: var(--darkestGray);
+    border-radius: 0.25rem;
+    border: 0.15rem solid var(--darkestGray);
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+label {
+    text-align: left;
+}
+
+input {
+    border: 0.15rem solid var(--darkestGray);
+    border-radius: 0.25rem;
+    height: 1.5rem;
+}
+
+input:focus {
+    border: 0.15rem solid var(--orange);
+    outline: none;
+}
+
+.divButton {
+    font-weight: bold;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border: 0.15rem solid var(--darkestGray);
+}
+
+.btnOrange {
+    background: var(--orange);
+}
+
+.btnGray {
+    background: var(--lightGray);
+}
+
+.smallGrayText {
+    font-size: var(--fontSmall);
+    color: var(--lightGray);
+}
+
+a {
+    font-size: var(--fontMedium);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.btnOrange:hover {
+    background: var(--darkOrange);
+}
+
+.btnGray:hover {
+    background: var(--darkGray);
+}
+
+
+/*******************************/
+/* LOGIN                       */
+/*******************************/
+
+#formLogin {
+    height: 22rem;
+}
+
+
+/*******************************/
+/* CREATE / EDIT ACCOUNT       */
+/*******************************/
+
+#formCreateAccount {
+    height: 37rem;
+}
+
+#formEditAccount {
+    height: 27rem;
+}
+
+.doubleInput {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-self: stretch;
+}
+
+.singleInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.singleInput > label {
+    margin-bottom: 0.6rem;
+}
+
+.singleInput > input {
+    margin-bottom: 0.4rem;
+}
+
+hr {
+    color: var(--lightestGray);
+    width: 100%;
+}
+
+
+/*******************************/
+/* FOOTER                      */
+/*******************************/
+
+.accountsFooter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    margin: 0;
+    border-top: 0.1rem solid var(--lightGray);
+    background-color: var(--lightestGray);
+    text-align: center;
+}
+
+.footerLink {
+    font-size: var(--fontExtraSmall);
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.footerLink:hover {
+    color: var(--darkOrange);
+}
+
+.copyright {
+    font-size: var(--fontExtraSmall);
+    color: var(--orange);
+}
+
+
+/*******************************/
+/* MEDIA QUERIES               */
+/*******************************/
+
+@media (max-width: 1600px) 
+{
+    :root {
+        --contentWith: 36%;
+    }
+}
+
+@media (max-width: 1100px) 
+{
+    :root {
+        --contentWith: 55%;
+    }
+}
+
+@media (max-width: 700px) 
+{
+    :root {
+        --contentWith: 90%;
+    }
+}

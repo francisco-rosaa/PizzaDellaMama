@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#127829; Pizza Della Mama</title>
+    <script type="module" src="./scripts/main.js" defer></script>
+    <link id="currentCss" rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+    <!-- MAIN SCREEN -->
+    <div id="mainScreen">
+
+        <!-- HEADER -->
+        <div id="header">
+            <div>
+                <img id="pizzaLogo" src="./images/pizzaLogo.jpg" alt="Logo">
+            </div>
+            <div id="headerMenu">
+                <a id="menuLinkOrder">
+                    <div id="menuTileOrder">
+                        <p id="menuTextOrder">
+                            ORDER
+                        </p>
+                    </div>
+                </a>
+                <a id="menuLinkAccount">
+                    <div id="menuTileAccount">
+                        <p id="menuTextAccount">
+                            CREATE ACCOUNT
+                        </p>
+                    </div>
+                </a>
+                <a id="menuLinkLogout">
+                    <div id="menuTileLogout">
+                        <p id="menuTextLogout">
+                            LOGOUT
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div id="contentArea">
+            <div>
+                
+                <!-- CRUST -->
+                <div id="pizzaCrust" class="formBox">
+                    <p class="orangeTitle">
+                        Select your crust
+                    </p>
+                    <form id="formCrust" action="" method="">
+                        <div class="formSelectionButtons">
+                            <label for="crustSmall">Small</label>
+                            <input type="radio" id="crustSmall" name="crustType" value="Small">
+                            <label for="crustMedium">Medium</label>
+                            <input type="radio" id="crustMedium" name="crustType" value="Medium">
+                            <label for="crustLarge">Large</label>
+                            <input type="radio" id="crustLarge" name="crustType" value="Large">
+                            <label for="pizzaQuantity">Quantity</label>
+                            <input type="number" id="pizzaQuantity" name="quantity" min="1" max="50" value="1" size="3">
+                        </div>
+                        <a id="buttonToIngredients" class="formButtonLink">
+                            <div class="formButton formButtonFloat">
+                                INGREDIENTS&nbsp;&nbsp;>
+                            </div>
+                        </a>
+                    </form>
+                </div>
+
+                <!-- INGREDIENTS -->
+                <div id="pizzaIngredients" class="formBox">
+                    <p class="orangeTitle">
+                        Select your ingredients
+                    </p>
+                    <form id="formIngredients" action="" method="">
+                        <div id="ingredientsDiv" class="formSelectionButtons">
+                            <!-- Ingredients -->
+                        </div>
+                        <div class="formButtonFloat">
+                            <a id="buttonBackCrust" class="formButtonLink">
+                                <div class="formButton">
+                                    &lt;&nbsp;&nbsp;CRUST
+                                </div>
+                            </a>
+                            &nbsp;&nbsp;
+                            <a id="buttonToFinish" class="formButtonLink">
+                                <div class="formButton">
+                                    FINISH&nbsp;&nbsp;>
+                                </div>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- ORDER DETAILS -->
+                <div id="orderDetails" class="formBox">
+                    <p class="orangeTitle">
+                        Order Details
+                    </p>
+                    <form id="formOrderDetails" action="" method="">
+                        <div class="orderDetailsInfo">
+                            <label for="orderDetCrust">Crust Type</label>
+                            <output id="orderDetCrust"></output>
+                            <label for="orderDetBasePrice">Base Price</label>
+                            <output id="orderDetBasePrice"></output>
+                            <label for="orderDetIngredients">Ingredients</label>
+                            <output id="orderDetIngredients"></output>
+                            <label for="orderDetPricePerIngredient">Price Per Ingredient</label>
+                            <output id="orderDetPricePerIngredient"></output>
+                            <label for="orderDetIngredientsPrice">Ingredients Price</label>
+                            <output id="orderDetIngredientsPrice"></output>
+                            <label for="orderDetPricePerPizza">Price Per Pizza</label>
+                            <output id="orderDetPricePerPizza"></output>
+                            <label for="orderDetQuantity">Quantity</label>
+                            <output id="orderDetQuantity"></output>
+                            <label for="orderDetSubTotal">Sub Total</label>
+                            <output id="orderDetSubTotal"></output>
+                            <label id="vatRate" for="orderDetVatTotal">VAT</label>
+                            <output id="orderDetVatTotal"></output>
+                            <label for="orderDetTotal">Total</label>
+                            <output id="orderDetTotal"></output>
+                            <label for="orderDetInvoice">Invoice</label>
+                            <input type="checkbox" id="orderDetInvoice" name="orderDetInvoice" value="invoice">
+                            <label for="orderDetName" class="invoiceInfo" >Name</label>
+                            <input type="text" id="orderDetName" class="invoiceInfo" name="orderDetName" placeholder="Name">
+                            <label for="orderDetAddress" class="invoiceInfo" >Address</label>
+                            <input type="text" id="orderDetAddress" class="invoiceInfo" name="orderDetAddress" placeholder="Address">
+                            <label for="orderDetTin" class="invoiceInfo" >TIN</label>
+                            <input type="text" id="orderDetTin" class="invoiceInfo" name="orderDetTin" placeholder="TIN">
+                        </div>
+                        <div class="formButtonFloat">
+                            <a id="buttonBackIngredients" class="formButtonLink">
+                                <div class="formButton">
+                                    &lt;&nbsp;&nbsp;INGREDIENTS
+                                </div>
+                            </a>
+                            &nbsp;&nbsp;
+                            <a id="buttonToOrder" class="formButtonLink">
+                                <div class="formButton">
+                                    ORDER
+                                </div>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- ORDER DONE -->
+                <div id="orderDone" class="formBox">
+                    <p class="orangeTitle">
+                        Thank you for your preference
+                    </p>
+                    <form id="formOrderDone" action="" method="">
+                        <div id="orderDoneMessage">
+                        </div>
+                        <br>
+                        <br>
+                        <div id="orderDoneInvoice">
+                            <output id="invoiceSeller"></output>
+                            <output id="invoiceBuyer"></output>
+                            <output id="invoiceNumber"></output>
+                            <output id="invoiceDate"></output>
+                            <output id="invoicePizza"></output>
+                            <output id="invoiceQuantity"></output>
+                            <output id="invoiceSubTotal"></output>
+                            <output id="invoiceVatTotal"></output>
+                            <output id="invoiceTotal"></output>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <div id="sideBar">
+                <p class="orangeTitle">
+                    Login
+                </p>
+                <div id="loginInputs" class="login">
+                    <form id="formLoginSide" class="login" action="" method="">
+                        <div id="loginInputsTop">
+                            <input type="email" id="inputEmailSide" name="inputEmailSide" placeholder="Email">
+                        </div>
+                        <div id="loginInputsBottom">
+                            <input type="password" id="inputPasswordSide" name="inputPasswordSide" placeholder="Password">
+                            <input type="button" id="buttonLoginSide" name="buttonLoginSide" value="Login">
+                        </div>
+                    </form>
+                    <div id="invalidLogin">
+                        <span id="invalidLoginSymbol">&#9888;</span>
+                        <span id="invalidLoginMessage">Invalid Login</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div id="footer">
+            <div id="footerTop">
+                <div id="footerTopContent">
+                    <div class="footerBox">
+                        <p class="boxTitle">
+                            The Dough
+                        </p>
+                        <p class="boxText">
+                            The dough on the pizzas della mama is crunchy, crunchy and very, very tasty. All
+                            our pizzas are made in thin dough following the best neapolitan traditions. Eco!
+                        </p>
+                    </div>
+                    <div class="footerBox">
+                        <p class="boxTitle">
+                            The Ingredients
+                        </p>
+                        <p class="boxText">
+                            Fresh and delicious, mouth-watering ingredients from the best Portuguese
+                            and Italian suppliers straight to your pizza. Mamma mia!
+                        </p>
+                    </div>
+                    <div class="footerBox">
+                        <p class="boxTitle">
+                            Recommendations
+                        </p>
+                        <ul class="footerUl">
+                            <li><a class="footerLink">Consectetuer adipiscing elit</a></li>
+                            <li><a class="footerLink">Metus aliquam pellentesque</a></li>
+                            <li><a class="footerLink">Suspendisse iaculis mauris</a></li>
+                            <li><a class="footerLink">Urnanet non molestie semper</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="footerBottom">
+                <p id="copyrightText">
+                    COPYRIGHT &copy; 2021 PIZZADELLAMAMA.COM ALL RIGHTS RESERVED &nbsp; | &nbsp; DESIGNED BY 
+                    <span class="designed">TM<span class="designedAnd">&</span>FR</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- LOGIN SCREEN -->
+    <div id="loginScreen">
+        <div class="contentSection">
+            <a id="homeLinkLogin">
+                <p class="orangeTitle">
+                    pizza della mama
+                </p>
+            </a>
+            <div id="alertLogin" class="alert">
+                There was a problem: your email or password is incorrect
+            </div>
+            <br>
+            <form id="formLogin" class="formContent" action="" method="">
+                <span class="darkTitle">
+                    Login
+                </span>
+                <br>
+                <label for="inputEmail">Email</label>
+                <input type="email" id="inputEmail" name="inputEmail">
+                <label for="inputPassword">Password</label>
+                <input type="password" id="inputPassword" name="inputPassword">
+                <br>
+                <a id="buttonLogin">
+                    <div class="divButton btnOrange">
+                        Login Securely
+                    </div>
+                </a>
+                <br>
+                <span class="smallGrayText">
+                    New to pizza della mama?
+                </span>
+                <a id="buttonCreateAcc">
+                    <div class="divButton btnGray">
+                        Create Account
+                    </div>
+                </a>
+            </form>
+        </div>
+        <div class="accountsFooter">
+            <a class="footerLink">Conditions of Use</a>&nbsp;&nbsp; 
+            <a class="footerLink">Privacy</a>&nbsp;&nbsp; 
+            <span class="copyright">&copy; 2014 - 2021 Pizza Della Mama</span>
+        </div>
+    </div>
+
+    <!-- CREATE ACCOUNT SCREEN -->
+    <div id="createAccountScreen">
+        <div class="contentSection">
+            <a id="homeLinkCreateAcc">
+                <p class="orangeTitle">
+                    pizza della mama
+                </p>
+            </a>
+            <br>
+            <form id="formCreateAccount" class="formContent" action="" method="">
+                <span class="darkTitle">
+                    Create Account
+                </span>
+                <br>
+                <div class="doubleInput">
+                    <div class="singleInput">
+                        <label for="registerFirstName">First Name</label>
+                        <input type="text" id="registerFirstName" name="registerFirstName">
+                    </div>
+                    <div class="singleInput">
+                        <label for="registerLastName">Last Name</label>
+                        <input type="text" id="registerLastName" name="registerLastName">
+                    </div>
+                </div>
+                <div class="singleInput">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" name="registerEmail">
+                </div>
+                <div class="doubleInput">
+                    <div class="singleInput">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" name="registerPassword">
+                    </div>
+                    <div class="singleInput">
+                        <label for="registerConfirmPass">Confirm Password</label>
+                        <input type="password" id="registerConfirmPass" name="registerConfirmPass">
+                    </div>
+                </div>
+                <hr>
+                <div class="doubleInput">
+                    <div class="singleInput">
+                        <label for="registerPhone">Phone Number</label>
+                        <input type="text" id="registerPhone" name="registerPhone">
+                    </div>
+                    <div class="singleInput">
+                        <label for="registerTin">TIN</label>
+                        <input type="text" id="registerTin" name="registerTin">
+                    </div>
+                </div>
+                <div class="singleInput">
+                    <label for="registerAddress">Address</label>
+                    <input type="text" id="registerAddress" name="registerAddress">
+                </div>
+                <br>
+                <a id="buttonCreateAccount">
+                    <div class="divButton btnOrange">
+                        Create Account
+                    </div>
+                </a>
+                <br>
+                <span class="smallGrayText">
+                    Already have an account?
+                </span>
+                <a id="buttonRedirectLogin">
+                    <div class="divButton btnGray">
+                        Login Securely
+                    </div>
+                </a>
+            </form>
+        </div>
+        <div class="accountsFooter">
+            <a class="footerLink">Conditions of Use</a>&nbsp;&nbsp; 
+            <a class="footerLink">Privacy</a>&nbsp;&nbsp; 
+            <span class="copyright">&copy; 2014 - 2021 Pizza Della Mama</span>
+        </div>
+    </div>
+
+    <!-- EDIT ACCOUNT SCREEN -->
+    <div id="editAccountScreen">
+        <div class="contentSection">
+            <a id="homeLinkEditAcc">
+                <p class="orangeTitle">
+                    pizza della mama
+                </p>
+            </a>
+            <br>
+            <form id="formEditAccount" class="formContent" action="" method="">
+                <span class="darkTitle">
+                    Edit Account
+                </span>
+                <br>
+                <div class="doubleInput">
+                    <div class="singleInput">
+                        <label for="editFirstName">First Name</label>
+                        <input type="text" id="editFirstName" name="editFirstName">
+                    </div>
+                    <div class="singleInput">
+                        <label for="editLastName">Last Name</label>
+                        <input type="text" id="editLastName" name="editLastName">
+                    </div>
+                </div>
+                <div class="singleInput">
+                    <label for="editAddress">Address</label>
+                    <input type="text" id="editAddress" name="editAddress">
+                </div>
+                <div class="doubleInput">
+                    <div class="singleInput">
+                        <label for="editPhone">Phone Number</label>
+                        <input type="text" id="editPhone" name="editPhone">
+                    </div>
+                    <div class="singleInput">
+                        <label for="editTin">TIN</label>
+                        <input type="text" id="editTin" name="editTin">
+                    </div>
+                </div>
+                <hr>
+                <div class="doubleInput">
+                    <div class="singleInput">
+                        <label for="editPassword">Password</label>
+                        <input type="password" id="editPassword" name="editPassword">
+                    </div>
+                    <div class="singleInput">
+                        <label for="editConfirmPass">Confirm Password</label>
+                        <input type="password" id="editConfirmPass" name="editConfirmPass">
+                    </div>
+                </div>
+                <br>
+                <a id="buttonEditAccount">
+                    <div class="divButton btnOrange">
+                        Edit Account
+                    </div>
+                </a>
+            </form>
+        </div>
+        <div class="accountsFooter">
+            <a class="footerLink">Conditions of Use</a>&nbsp;&nbsp; 
+            <a class="footerLink">Privacy</a>&nbsp;&nbsp; 
+            <span class="copyright">&copy; 2014 - 2021 Pizza Della Mama</span>
+        </div>
+    </div>
+
+</body>
+</html>
